@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Jidai doxygen",
+      "type": "shell",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceFolder}/doc"
+      },
+      "command": "doxygen Jidai.doxyfile"
+    },
+    {
+      "label": "Jidai make test",
+      "type": "shell",
+      "isBackground": true,
+      "command": "make test"
+    },
+    {
+      "label": "Jidai run test",
+      "type": "shell",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceFolder}/build/test"
+      },
+      "command": "./test"
+    },        
+  ]
+}
