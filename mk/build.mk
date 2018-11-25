@@ -29,15 +29,15 @@ $(LIB): $(OBJS)
 # Assembly
 $(TARGET_DIR)/%.asm.o: %.asm
 	$(MKDIR_P) $(dir $@)
-	$(AS) $(ASFLAGS) -c $< -o $@	
+	$(AS) $(CPPFLAGS) $(ASFLAGS) -c $< -o $@	
 
 $(TARGET_DIR)/%.s.o: %.s
 	$(MKDIR_P) $(dir $@)
-	$(AS) $(ASFLAGS) -c $< -o $@
+	$(AS) $(CPPFLAGS) $(ASFLAGS) -c $< -o $@
 	
 $(TARGET_DIR)/%.S.o: %.S
 	$(MKDIR_P) $(dir $@)
-	$(AS) $(ASFLAGS) -c $< -o $@	
+	$(AS) $(CPPFLAGS) $(ASFLAGS) -c $< -o $@	
 
 # C 
 $(TARGET_DIR)/%.c.o: %.c

@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Jidai doxygen",
+      "label": "Doxygen",
       "type": "shell",
       "isBackground": true,
       "options": {
@@ -11,13 +11,13 @@
       "command": "doxygen Jidai.doxyfile"
     },
     {
-      "label": "Jidai make test",
+      "label": "Make test",
       "type": "shell",
       "isBackground": true,
       "command": "make test"
     },
     {
-      "label": "Jidai run test",
+      "label": "Run test",
       "type": "shell",
       "isBackground": true,
       "options": {

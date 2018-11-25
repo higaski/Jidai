@@ -14,12 +14,12 @@ namespace jidai {
 
 /// Compilation date and time
 struct CompilationTime {
-  uint8_t day;
-  uint8_t month;
-  uint16_t year;
-  uint8_t hour;
-  uint8_t minute;
-  uint8_t second;
+  uint8_t day{};
+  uint8_t month{};
+  uint16_t year{};
+  uint8_t hour{};
+  uint8_t minute{};
+  uint8_t second{};
 };
 
 namespace detail {
@@ -153,8 +153,8 @@ constexpr CompilationTime make_compilation_time() {
 ///
 /// \param  time  Compilation time to convert
 /// \return Compilation time in seconds
-constexpr size_t compilation_time2seconds(CompilationTime const time) {
-  auto const count_leap_years{[&time]() {
+constexpr size_t compilation_time2seconds(CompilationTime time) {
+  auto count_leap_years{[&time]() {
     size_t retval{time.year};
     if (time.month <= 2)
       --retval;
@@ -194,8 +194,7 @@ inline constexpr CompilationTime default_epoch{
 /// \tparam epoch Epoch to use
 /// \return Unix compilation time since epoch
 template<typename T = time_t>
-constexpr T make_unix_compilation_time(
-    CompilationTime const epoch = default_epoch) {
+constexpr T make_unix_compilation_time(CompilationTime epoch = default_epoch) {
   return static_cast<T>(compilation_time2seconds(make_compilation_time()) -
                         compilation_time2seconds(epoch));
 }
